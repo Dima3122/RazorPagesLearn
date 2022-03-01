@@ -9,5 +9,6 @@
 	{
 		<div> "Работник: @item.Name"
 		<a asp-page="/Employees/Details" asp-route-ID="@item.Id" class="btn-success">Подробнее</a>
+		<a asp-page="/Employees/Edit" asp-route-ID="@item.Id" class="btn-success">Edit</a>
 		</div>
 	}

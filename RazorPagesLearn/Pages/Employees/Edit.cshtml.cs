@@ -5,21 +5,20 @@ using RazorPagesLearn.Services;
 
 namespace RazorPagesLearn.Pages.Employees
 {
-    public class DetailsModel : PageModel
+    public class EditModel : PageModel
     {
         private readonly IEmployeeRepository employeeRepository;
-        public DetailsModel(IEmployeeRepository employeeRepository)
+        public EditModel(IEmployeeRepository employeeRepository)
         {
             this.employeeRepository = employeeRepository;
         }
-        public employee Employee { get; set; } 
-
+        public employee Employee { get; set; }
         public IActionResult OnGet(int id)
         {
             Employee = employeeRepository.GetEmployee(id);
             if (Employee == null)
             {
-                return RedirectToPage("/NotFound");
+                RedirectToPage("/NotFound");
             }
             return Page();
         }
