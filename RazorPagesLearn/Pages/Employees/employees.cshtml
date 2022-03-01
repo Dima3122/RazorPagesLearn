@@ -1,0 +1,13 @@
+﻿@page
+@model RazorPagesLearn.Pages.Employees.employeesModel
+@{
+	ViewData["Title"] = "employees";
+}
+	<h1>Employees</h1>
+	<h3>Employees count @Model.Employees.Count()</h3>
+	@foreach (var item in Model.Employees)
+	{
+		<div> "Работник: @item.Name"
+		<a asp-page="/Employees/Details" asp-route-ID="@item.Id" class="btn-success">Подробнее</a>
+		</div>
+	}
