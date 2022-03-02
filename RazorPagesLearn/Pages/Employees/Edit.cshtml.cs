@@ -15,7 +15,9 @@ namespace RazorPagesLearn.Pages.Employees
         /// <summary>
         /// Представление конкретного члена персонала
         /// </summary>
+        [BindProperty]
         public employee Employee { get; set; }
+        [BindProperty]
         public bool Norify { get; set; }
         public string msg { get; set; }
         /// <summary>
@@ -36,10 +38,15 @@ namespace RazorPagesLearn.Pages.Employees
         /// Пост запросы
         /// </summary>
         /// <returns></returns>
-        public IActionResult OnPost(employee employee)
+        public IActionResult OnPost()
         {
-            Employee = employeeRepository.Update(employee);
-            return RedirectToPage("/Employees/employees");
+            if (ModelState.ErrorCount < 2)
+            {
+                Employee = employeeRepository.Update(Employee);
+                TempData["msg"] = $"Update {Employee.Name} successful";
+                return RedirectToPage("/Employees/employees");
+            }
+            return Page();
         }
         public void OnPostUpdate(int id)
         {

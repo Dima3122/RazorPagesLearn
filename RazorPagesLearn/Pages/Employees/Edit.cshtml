@@ -4,12 +4,16 @@
 @{
 	ViewData["Title"] = "Edit";
 }
+@if(TempData["msg"] != null)
+{
+	<p>@TempData["msg"]</p>
+}
 <form method="post" asp-page-handler="Update">
 	<h1>Notification Preference</h1>
 	<input asp-for="Norify" />
 	<label asp-for="Norify">
 		Receive email notification when my details
-	</label><br />
+	</label><br/>
 	<button type="submit">submit</button>
 	@if (!string.IsNullOrWhiteSpace(Model.msg))
 	{
