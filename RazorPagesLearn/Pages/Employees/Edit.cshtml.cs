@@ -12,7 +12,15 @@ namespace RazorPagesLearn.Pages.Employees
         {
             this.employeeRepository = employeeRepository;
         }
+        /// <summary>
+        /// Представление конкретного члена персонала
+        /// </summary>
         public employee Employee { get; set; }
+        /// <summary>
+        /// Get запросы
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public IActionResult OnGet(int id)
         {
             Employee = employeeRepository.GetEmployee(id);
@@ -21,6 +29,15 @@ namespace RazorPagesLearn.Pages.Employees
                 RedirectToPage("/NotFound");
             }
             return Page();
+        }
+        /// <summary>
+        /// Пост запросы
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult OnPost(employee employee)
+        {
+            Employee = employeeRepository.Update(employee);
+            return RedirectToPage("/Employees/employees");
         }
     }
 }

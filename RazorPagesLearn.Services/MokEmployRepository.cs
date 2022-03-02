@@ -57,5 +57,18 @@ namespace RazorPagesLearn.Services
         {
             return employees.FirstOrDefault(x => x.Id == id);
         }
+
+        public employee Update(employee UpdatedEmployee)
+        {
+            var employee = employees.FirstOrDefault(x => x.Id == UpdatedEmployee.Id);
+            if (employee != null)
+            {
+                employee.Name = UpdatedEmployee.Name;
+                employee.Email = UpdatedEmployee.Email;
+                employee.PhotoPath = UpdatedEmployee.PhotoPath;
+                employee.Department = UpdatedEmployee.Department;
+            }
+            return employee;
+        }
     }
 }
