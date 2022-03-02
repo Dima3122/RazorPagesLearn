@@ -16,6 +16,8 @@ namespace RazorPagesLearn.Pages.Employees
         /// Представление конкретного члена персонала
         /// </summary>
         public employee Employee { get; set; }
+        public bool Norify { get; set; }
+        public string msg { get; set; }
         /// <summary>
         /// Get запросы
         /// </summary>
@@ -38,6 +40,18 @@ namespace RazorPagesLearn.Pages.Employees
         {
             Employee = employeeRepository.Update(employee);
             return RedirectToPage("/Employees/employees");
+        }
+        public void OnPostUpdate(int id)
+        {
+            if (Norify)
+            {
+                msg = "Спасибо что включили оповещения";
+            }
+            else
+            {
+                msg = "Оповещения не включены";
+            }
+            Employee = employeeRepository.GetEmployee(id);
         }
     }
 }
