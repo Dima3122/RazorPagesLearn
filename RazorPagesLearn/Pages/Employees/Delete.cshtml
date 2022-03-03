@@ -1,0 +1,18 @@
+﻿@page "{id}"
+@model RazorPagesLearn.Pages.Employees.DeleteModel
+@{
+	ViewData["Title"] = "Delete";
+}
+
+<div>
+	<h4>Введите Id @Model.Employee.Id</h4>
+	<h4>Введите Email @Model.Employee.Email</h4>
+	<h4>Введите depart @Model.Employee.Department</h4>
+</div>
+<div>
+	<h5>Удаленить сотрудника?</h5>
+	<form method="post">
+		<button type="submit">Yes</button>
+		<a asp-page="/Employees/employees">No</a>
+	</form>
+</div>
