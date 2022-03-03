@@ -12,5 +12,6 @@ namespace RazorPagesLearn.Services
         IEnumerable<employee> GetAllEmployees();
         employee GetEmployee(int id);
         employee Update(employee UpdatedEmployee);
+        employee Add(employee NewEmployee);
     }
 }

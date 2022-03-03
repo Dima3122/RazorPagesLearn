@@ -8,7 +8,8 @@
 	@foreach (var item in Model.Employees)
 	{
 		<div> "Работник: @item.Name"
-		<a asp-page="/Employees/Details" asp-route-ID="@item.Id" class="btn-success">Подробнее</a>
-		<a asp-page="/Employees/Edit" asp-route-ID="@item.Id" class="btn-success">Edit</a>
+		<a asp-page="/Employees/Details" asp-route-ID="@item.Id">Подробнее</a>
+		<a asp-page="/Employees/Edit" asp-route-ID="@item.Id">Изменить</a>
 		</div>
 	}
+	<a asp-page="/Employees/Edit" asp-route-ID="null">Добавить</a>

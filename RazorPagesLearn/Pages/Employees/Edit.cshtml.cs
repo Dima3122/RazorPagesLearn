@@ -25,9 +25,16 @@ namespace RazorPagesLearn.Pages.Employees
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public IActionResult OnGet(int id)
+        public IActionResult OnGet(int? id)
         {
-            Employee = employeeRepository.GetEmployee(id);
+            if (id.HasValue)
+            {
+                Employee = employeeRepository.GetEmployee(id.Value);
+            }
+            else
+            {
+                Employee = new employee();
+            }
             if (Employee == null)
             {
                 RedirectToPage("/NotFound");
@@ -42,8 +49,16 @@ namespace RazorPagesLearn.Pages.Employees
         {
             if (ModelState.ErrorCount < 2)
             {
-                Employee = employeeRepository.Update(Employee);
-                TempData["msg"] = $"Update {Employee.Name} successful";
+                if (Employee.Id > 0)
+                {
+                    Employee = employeeRepository.Update(Employee);
+                    TempData["msg"] = $"Update {Employee.Name} successful";
+                }
+                else
+                {
+                    Employee = employeeRepository.Add(Employee);
+                    TempData["msg"] = $"Adding {Employee.Name} successful";
+                }
                 return RedirectToPage("/Employees/employees");
             }
             return Page();

@@ -48,6 +48,14 @@ namespace RazorPagesLearn.Services
                 }
             };
         }
+
+        public employee Add(employee NewEmployee)
+        {
+            NewEmployee.Id = employees.Max(x => x.Id) + 1;
+            employees.Add(NewEmployee);
+            return NewEmployee;
+        }
+
         public IEnumerable<employee> GetAllEmployees()
         {
             return employees;

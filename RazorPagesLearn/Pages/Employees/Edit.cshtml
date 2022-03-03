@@ -2,7 +2,8 @@
 @using RazorPagesLearn.Models
 @model RazorPagesLearn.Pages.Employees.EditModel
 @{
-	ViewData["Title"] = "Edit";
+	var pageTitle = Model.Employee.Id > 0 ? "Edit" : "Create";
+	ViewData["Title"] = pageTitle;
 }
 @if(TempData["msg"] != null)
 {
