@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorPagesLearn.Models", "R
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorPagesLearn.Services", "RazorPagesLearn.Services\RazorPagesLearn.Services.csproj", "{7B3D3738-7D7C-4498-83B1-EA6B2F9E9800}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{C28D6B04-6377-437D-8902-24E75BC08913}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7B3D3738-7D7C-4498-83B1-EA6B2F9E9800}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B3D3738-7D7C-4498-83B1-EA6B2F9E9800}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B3D3738-7D7C-4498-83B1-EA6B2F9E9800}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C28D6B04-6377-437D-8902-24E75BC08913}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C28D6B04-6377-437D-8902-24E75BC08913}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C28D6B04-6377-437D-8902-24E75BC08913}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C28D6B04-6377-437D-8902-24E75BC08913}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
