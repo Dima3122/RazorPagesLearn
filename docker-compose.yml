@@ -1,4 +1,4 @@
-version: '3.4'
+version: '3.6'
 
 services:
   razorpageslearn:
@@ -6,3 +6,8 @@ services:
     build:
       context: .
       dockerfile: RazorPagesLearn/Dockerfile
+    ports:
+      - '9299:9299'
+    environment:
+      - HTTP_PORT=9299
+      

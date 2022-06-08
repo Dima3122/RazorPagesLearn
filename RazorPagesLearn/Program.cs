@@ -16,22 +16,10 @@ builder.WebHost.UseMetricsWebTracking(options =>
 {
     options.OAuth2TrackingEnabled = true;
 });
-/*builder.WebHost.ConfigureKestrel(serverOptions => 
+builder.WebHost.UseKestrel().ConfigureKestrel(options =>
 {
-    serverOptions.ListenAnyIP(7287 ,listenOptions =>
-    {
-        listenOptions.Protocols = HttpProtocols.Http1;
-    });
-    serverOptions.ListenAnyIP(5001, listenOptions =>
-    {
-        listenOptions.Protocols = HttpProtocols.Http2;
-    });
-});*/
-/*ConfigureWebHostDefaults(webBuilder => webBuilder.ConfigureKestrel(options =>
-{
-    options.ListenAnyIP(8080, listenOptions => listenOptions.Protocols = HttpProtocols.Http1);
-    options.ListenAnyIP(5000, listenOptions => listenOptions.Protocols = HttpProtocols.Http2);
-});*/
+    options.ListenAnyIP(9299);
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
