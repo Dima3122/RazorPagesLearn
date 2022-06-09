@@ -14,7 +14,9 @@ services:
     container_name: prometheus
     ports:
       - 9090:9090
-    
+    volumes:
+      - C:\Develop\Docker\prometheus:\etc\prometheus
+
   grafana:
     image: grafana/grafana
     container_name: grafana
